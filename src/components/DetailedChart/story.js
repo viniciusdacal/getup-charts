@@ -2,18 +2,15 @@ import React from 'react';
 import { storiesOf, action, linkTo } from '@kadira/storybook';
 import DetailedChart from './DetailedChart';
 
-
 const createVariation = (data) => {
-  return data.map(container => {
-    return {
-      ...container,
-      data: container.data.map(rangeInfo => ({
-        ...rangeInfo,
-        avg: (rangeInfo.avg * Math.random() * 10)
-      }))
-    }
-  })
-}
+  return data.map(container => ({
+    ...container,
+    data: container.data.map(info => ({
+      ...info,
+      avg: (info.avg * Math.random() * 10)
+    }))
+  }))
+};
 
 const data = createVariation(require('./mock.json'));
 const data2 = createVariation(require('./mock2.json'));

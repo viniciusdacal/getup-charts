@@ -10,7 +10,6 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import moment from 'moment';
-import './Recharts.css';
 import {normalizeContainersData, hexEncode} from '../../utils';
 
 const renderLegend = (props) => {
