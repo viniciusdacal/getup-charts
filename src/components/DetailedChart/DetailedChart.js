@@ -30,10 +30,14 @@ const renderLegend = (props) => {
   );
 }
 
-const DetailedChart = ({ containerList, labelAxysY, unit }) => {
-  const containerData = normalizeContainersData(containerList, (avg) => {
-    return (avg / 10000000) * (Math.random() * 10)
-  });
+const DetailedChart = ({
+  containerList,
+  labelAxysY,
+  unit,
+  unitNormalizer = (unit) => (unit / 10000000),
+}) => {
+
+  const containerData = normalizeContainersData(containerList, unitNormalizer);
 
   return (
     <div className='chart-recharts'>
