@@ -32,7 +32,7 @@ const renderLegend = (props) => {
 const DetailedChart = ({
   containerList,
   labelAxysY,
-  unit,
+  unitLabel,
   unitNormalizer = (unit) => (unit / 10000000),
 }) => {
 
@@ -63,7 +63,7 @@ const DetailedChart = ({
               strokeWidth='2px'
               dot={false}
               activeDot={{r: 8}}
-              unit={unit}
+              unit={unitLabel}
               formatter={(average) => parseInt(average)}
               isAnimationActive={false}
             />

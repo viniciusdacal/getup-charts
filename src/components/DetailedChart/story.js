@@ -23,11 +23,11 @@ const style = {
 storiesOf('DetailedChart', module)
   .add('default', () => (
     <div style={style}>
-      <DetailedChart containerList={data} labelAxysY='Millicores' unit='m'/>
+      <DetailedChart containerList={data} labelAxysY='Millicores' unitLabel='m'/>
     </div>
   ))
   .add('more data', () => (
     <div style={style}>
-      <DetailedChart containerList={data2} labelAxysY='Millicores' unit='m'/>
+      <DetailedChart containerList={data2} labelAxysY='Millicores' unitLabel='m'/>
     </div>
   ));

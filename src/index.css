@@ -46,3 +46,26 @@ body {
   position: absolute;
   transform: rotateZ(-90deg) translateX(-50%);
 }
+
+.summaryChart {
+  display: flex;
+  align-items: flex-start;
+}
+
+.summaryChart-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  font-weight: 300;
+  min-width: 80px;
+}
+.summaryChart-value {
+  font-size: 26px;
+  color: #333;
+}
+.summaryChart-unitLabel {
+  color: #999;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
