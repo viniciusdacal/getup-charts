@@ -11,17 +11,7 @@ import {
 } from 'recharts';
 import moment from 'moment';
 import './Recharts.css';
-import normalizeContainersData from '../../utils/normalizeContainersData';
-
-const hexEncode = function(str){
-  let hash = 0;
-  for (var i = 0; i < str.length; i++) {
-    hash = str.charCodeAt(i) + ((hash << 5) - hash);
-  }
-
-  const c = (hash & 0x00FFFFFF).toString(16).toUpperCase();
-  return '00000'.substring(0, 6 - c.length) + c;
-}
+import {normalizeContainersData, hexEncode} from '../../utils';
 
 const renderLegend = (props) => {
   const { payload } = props;
@@ -58,7 +48,7 @@ const DetailedChart = ({ containerList, labelAxysY, unit }) => {
             tickFormatter={(start) => moment(start).format('ddd H:mm')}
             minTickGap={10}
             />
-          <YAxis tickLine={false}/>
+          <YAxis />
           <Tooltip labelFormatter={(start) => moment(start).format('ddd H:mm')}/>
           <Legend content={renderLegend}/>
           {containerData.lines.map((containerName) => (
