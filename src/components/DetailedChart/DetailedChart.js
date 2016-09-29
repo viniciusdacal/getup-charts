@@ -57,7 +57,7 @@ const DetailedChart = ({
           {containerData.lines.map((containerName) => (
             <Line
               key={containerName}
-              type='basis'
+              type='monotone'
               dataKey={containerName}
               stroke={`#${hexEncode(containerName)}`}
               strokeWidth='2px'

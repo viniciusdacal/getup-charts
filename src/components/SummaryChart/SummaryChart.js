@@ -48,7 +48,7 @@ const SummaryChart = ({
       <ResponsiveContainer height={42} margin={{top:0, bottom: 0}}>
         <AreaChart data={averageByTick} margin={{top:0, bottom: 0}}>
           <Area
-            type='basis'
+            type='monotone'
             dataKey='avg'
             stroke='#00659c'
             fill='#d2e4f0'
