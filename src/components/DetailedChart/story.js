@@ -12,8 +12,8 @@ const createVariation = (data) => {
   }))
 };
 
-const data = createVariation(require('./mock.json'));
-const data2 = createVariation(require('./mock2.json'));
+const data = createVariation(require('../../mock.json'));
+const data2 = createVariation(require('../../mock2.json'));
 
 const style = {
   margin: '30px',

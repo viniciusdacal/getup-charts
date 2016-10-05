@@ -12,7 +12,7 @@ const createVariation = (data) => {
   }))
 };
 
-const data = createVariation(require('./mock.json'));
+const data = createVariation(require('../../mock.json'));
 
 const style = {
   margin: '30px',
