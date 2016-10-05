@@ -28,16 +28,21 @@ const renderLegend = (props) => {
     </ul>
   );
 }
-
+const getLastAverage = (containerData) => {
+  const tick = containerData.data[containerData.data.length - 1];
+  const lines = containerData.lines;
+  return lines.reduce((current, tickName) => current + (tick[tickName] || 0), 0) / lines.length;
+};
 const DetailedChart = ({
   containerList,
   labelAxysY,
   unitLabel,
+  unit,
   unitNormalizer = (unit) => (unit / 10000000),
 }) => {
 
   const containerData = normalizeContainersData(containerList, unitNormalizer);
-
+  const lastAverage = getLastAverage(containerData);
   return (
     <div className='chart-recharts'>
       {labelAxysY && <span className='recharts-labelAxysY'>{labelAxysY}</span>}
@@ -45,11 +50,12 @@ const DetailedChart = ({
         height={300}
         margin={{top: 5, right: 30, left: 20, bottom: 5}}
         >
-        <LineChart data={containerData.data} >
+        <LineChart data={containerData.data}>
+          <CartesianGrid strokeDasharray="1 2" />
           <XAxis
             dataKey='start'
             tickFormatter={(start) => moment(start).format('ddd H:mm')}
-            minTickGap={10}
+
             />
           <YAxis />
           <Tooltip labelFormatter={(start) => moment(start).format('ddd H:mm')}/>
@@ -63,13 +69,17 @@ const DetailedChart = ({
               strokeWidth='2px'
               dot={false}
               activeDot={{r: 8}}
-              unit={unitLabel}
+              unit={unit}
               formatter={(average) => parseInt(average)}
               isAnimationActive={false}
             />
           ))}
         </LineChart>
       </ResponsiveContainer>
+      <div className='chart-recharts-info'>
+        <span className='chart-recharts-value'>{lastAverage.toFixed(1)}</span>
+        <span className='chart-recharts-unitLabel'>{unitLabel}</span>
+      </div>
     </div>
   )
 };

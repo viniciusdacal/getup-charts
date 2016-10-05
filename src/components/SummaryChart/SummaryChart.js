@@ -28,10 +28,7 @@ const getAverageByTick = (containerData) => {
   });
 };
 
-const getAverage = (averageByTick) => {
-  return averageByTick.reduce((total, tick) => total + tick.avg, 0) / averageByTick.length;
-};
-
+const getLastAverage = (averageByTick) => averageByTick[averageByTick.length - 1].avg;
 const SummaryChart = ({
   containerList,
   labelAxysY,
@@ -41,10 +38,10 @@ const SummaryChart = ({
 
   const containerData = normalizeContainersData(containerList, unitNormalizer);
   const averageByTick = getAverageByTick(containerData);
-  const average = getAverage(averageByTick);
+  const last = getLastAverage(averageByTick);
 
   return (
-    <div className='chart-recharts summaryChart'>
+    <div className='chart-recharts'>
       <ResponsiveContainer height={42} margin={{top:0, bottom: 0}}>
         <AreaChart data={averageByTick} margin={{top:0, bottom: 0}}>
           <Area
@@ -58,9 +55,9 @@ const SummaryChart = ({
           />
         </AreaChart>
       </ResponsiveContainer>
-      <div className='summaryChart-info'>
-        <span className='summaryChart-value'>{average.toFixed(1)}</span>
-        <span className='summaryChart-unitLabel'>{unitLabel}</span>
+      <div className='chart-recharts-info'>
+        <span className='chart-recharts-value'>{last.toFixed(1)}</span>
+        <span className='chart-recharts-unitLabel'>{unitLabel}</span>
       </div>
     </div>
   )
