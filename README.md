@@ -1,6 +1,10 @@
 
 # How to use
 
+```bash
+  npm install getup-charts --save
+```
+
 ```js
 import { SummaryChart } from 'getup-charts';
 
@@ -9,6 +13,7 @@ render() {
     <div>
       <SummaryChart containerList={data} unitLabel='MiB Memory'/>
     </div>
+  );
 }
 
 ```
