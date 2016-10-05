@@ -18,7 +18,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "build:lib": "babel ./components --out-dir ./lib"
   },
   "eslintConfig": {
     "extends": "./node_modules/react-scripts/config/eslint.js"
