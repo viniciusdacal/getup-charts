@@ -7,6 +7,7 @@
 
 ```js
 import { SummaryChart } from 'getup-charts';
+import 'getup-charts/lib/index.css';
 
 render() {
   return (
