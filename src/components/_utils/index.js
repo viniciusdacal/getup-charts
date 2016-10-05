@@ -18,7 +18,7 @@ export const normalizeContainersData = (containerList, avgFormat) => {
   }, {});
 
   return {
-    data: Object.values(ticks),
+    data: Object.keys(ticks).map(key => ticks[key]),
     lines,
   };
 };

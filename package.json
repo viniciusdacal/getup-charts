@@ -1,10 +1,18 @@
 {
   "name": "getup-charts",
   "version": "0.1.0",
-  "private": true,
+  "main": "./lib",
+  "private": false,
   "devDependencies": {
-    "react-scripts": "0.4.1",
-    "@kadira/storybook": "^2.5.2"
+    "@kadira/storybook": "^2.5.2",
+    "babel-cli": "^6.16.0",
+    "babel-core": "^6.17.0",
+    "babel-plugin-react-transform": "^2.0.2",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "cpx": "^1.5.0",
+    "react-scripts": "0.4.1"
   },
   "dependencies": {
     "moment": "^2.15.0",
@@ -19,7 +27,8 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009",
     "build-storybook": "build-storybook",
-    "build:lib": "babel ./components --out-dir ./lib"
+    "css": "cpx './src/components/**/*.css' ./lib",
+    "build:lib": "babel ./src/components --out-dir ./lib --ignore story.js && npm run css"
   },
   "eslintConfig": {
     "extends": "./node_modules/react-scripts/config/eslint.js"
