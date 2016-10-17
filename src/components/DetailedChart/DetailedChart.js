@@ -55,10 +55,9 @@ const DetailedChart = ({
           <XAxis
             dataKey='start'
             tickFormatter={(start) => moment(start).format('ddd H:mm')}
-
             />
           <YAxis />
-          <Tooltip labelFormatter={(start) => moment(start).format('ddd H:mm')}/>
+          <Tooltip labelFormatter={(start) => moment(start).format('ddd H:mm')} />
           <Legend content={renderLegend}/>
           {containerData.lines.map((containerName) => (
             <Line
@@ -70,7 +69,7 @@ const DetailedChart = ({
               dot={false}
               activeDot={{r: 8}}
               unit={unit}
-              formatter={(average) => parseInt(average)}
+              formatter={(average) => parseFloat(average).toFixed(1)}
               isAnimationActive={false}
             />
           ))}
