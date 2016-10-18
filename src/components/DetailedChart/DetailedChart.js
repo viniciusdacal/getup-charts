@@ -38,11 +38,13 @@ const DetailedChart = ({
   labelAxysY,
   unitLabel,
   unit,
+  averageFormatter = (average) => parseFloat(average).toFixed(1),
   unitNormalizer = (unit) => (unit / 10000000),
 }) => {
 
   const containerData = normalizeContainersData(containerList, unitNormalizer);
   const lastAverage = getLastAverage(containerData);
+
   return (
     <div className='chart-recharts'>
       {labelAxysY && <span className='recharts-labelAxysY'>{labelAxysY}</span>}
@@ -69,7 +71,7 @@ const DetailedChart = ({
               dot={false}
               activeDot={{r: 8}}
               unit={unit}
-              formatter={(average) => parseFloat(average).toFixed(1)}
+              formatter={averageFormatter}
               isAnimationActive={false}
             />
           ))}
