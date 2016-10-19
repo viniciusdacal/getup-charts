@@ -38,11 +38,13 @@ const DetailedChart = ({
   labelAxysY,
   unitLabel,
   unit,
+  averageFormatter = (average) => parseFloat(average).toFixed(1),
   unitNormalizer = (unit) => (unit / 10000000),
 }) => {
 
   const containerData = normalizeContainersData(containerList, unitNormalizer);
   const lastAverage = getLastAverage(containerData);
+
   return (
     <div className='chart-recharts'>
       {labelAxysY && <span className='recharts-labelAxysY'>{labelAxysY}</span>}
@@ -55,10 +57,9 @@ const DetailedChart = ({
           <XAxis
             dataKey='start'
             tickFormatter={(start) => moment(start).format('ddd H:mm')}
-
             />
           <YAxis />
-          <Tooltip labelFormatter={(start) => moment(start).format('ddd H:mm')}/>
+          <Tooltip labelFormatter={(start) => moment(start).format('ddd H:mm')} />
           <Legend content={renderLegend}/>
           {containerData.lines.map((containerName) => (
             <Line
@@ -70,7 +71,7 @@ const DetailedChart = ({
               dot={false}
               activeDot={{r: 8}}
               unit={unit}
-              formatter={(average) => parseInt(average)}
+              formatter={averageFormatter}
               isAnimationActive={false}
             />
           ))}
