@@ -8,7 +8,7 @@ export const normalizeContainersData = (containerList, avgFormat) => {
         [item.start]: {
           ...acc[item.start],
           ...accContainer[item.start],
-          [container.name]: avgFormat(item.avg),
+          [container.name]: isNaN(parseInt(item.avg)) ? null: avgFormat(item.avg),
           start: item.start
         }
       };

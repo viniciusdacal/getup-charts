@@ -23,7 +23,7 @@ const getAverageByTick = (containerData) => {
 
     return {
       start: range.start,
-      avg : parseFloat((totals.values / totals.lines).toFixed(2)),
+      avg : totals.values ? parseFloat((totals.values / totals.lines).toFixed(2)) : null,
     };
   });
 };
