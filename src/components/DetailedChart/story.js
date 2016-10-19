@@ -7,7 +7,7 @@ const createVariation = (data) => {
     ...container,
     data: container.data.map(info => ({
       ...info,
-      avg: (info.avg * Math.random() * 10)
+      avg: isNaN(parseInt(info.avg)) ? null : (info.avg * Math.random())
     }))
   }))
 };
