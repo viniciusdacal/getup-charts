@@ -1,0 +1,19 @@
+{
+    "cpu": [
+        {
+            "name": "pod-1-aaaaa",
+            "data": [
+                {"start":1477061380766,"end":1477061440766,"min":0.0,"avg":0.0,"median":0.0,"max":0.0,"sum":0.0,"samples":2,"empty":false},
+                {"start":1477061440766,"end":1477061500766,"min":0.0,"avg":0.0,"median":0.0,"max":0.0,"sum":0.0,"samples":2,"empty":false},
+                {"start":1477061500766,"end":1477061560766,"min":0.0,"avg":0.0,"median":0.0,"max":0.0,"sum":0.0,"samples":4,"empty":false},
+                {"start":1477061560766,"end":1477061620766,"min":0.0,"avg":0.0,"median":0.0,"max":0.0,"sum":0.0,"samples":4,"empty":false},
+                {"start":1477061620766,"end":1477061680766,"min":0.0,"avg":0.0,"median":0.0,"max":0.0,"sum":0.0,"samples":4,"empty":false},
+                {"start":1477061680766,"end":1477061740766,"min":0.0,"avg":0.0,"median":0.0,"max":0.0,"sum":0.0,"samples":2,"empty":false},
+                {"start":1477061740766,"end":1477061800766,"min":0.0,"avg":0.0,"median":0.0,"max":0.0,"sum":0.0,"samples":2,"empty":false},
+                {"start":1477061800766,"end":1477061860766,"min":0.0,"avg":0.0,"median":0.0,"max":0.0,"sum":0.0,"samples":4,"empty":false},
+                {"start":1477061860766,"end":1477061920766,"min":0.0,"avg":0.0,"median":0.0,"max":0.0,"sum":0.0,"samples":4,"empty":false},
+                {"start":1477061920766,"end":1477061980766,"min":0.0,"avg":0.0,"median":0.0,"max":0.0,"sum":0.0,"samples":2,"empty":false}
+            ]
+        }
+    ]
+}
