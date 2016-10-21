@@ -12,7 +12,8 @@ const createVariation = (data) => {
   }))
 };
 
-const data = createVariation(require('../../mock.json'));
+const cpu = require('../../mock.json').cpu;
+const memory = require('../../mock.json').memory;
 const data2 = createVariation(require('../../mock2.json'));
 
 const style = {
@@ -22,12 +23,17 @@ const style = {
 
 storiesOf('DetailedChart', module)
   .add('default', () => (
-    <div style={style}>
-      <DetailedChart containerList={data} labelAxysY='Millicores' unit='m' unitLabel='Millicores CPU'/>
+    <div>
+        <div style={style}>
+          <DetailedChart containerList={cpu} labelAxysY='%CPU Usage' unit='%' unitLabel='%CPU' unitNormalizer={value => ((value * 100) / 366)}/>
+        </div>
+        <div style={style}>
+          <DetailedChart containerList={memory} labelAxysY='Memory Usage MiB' unit='MiB' unitLabel='MiB' unitNormalizer={value => value/1000000}/>
+        </div>
     </div>
   ))
   .add('more data', () => (
     <div style={style}>
-      <DetailedChart containerList={data2} labelAxysY='Millicores' unit='m' unitLabel='Millicores CPU'/>
+      <DetailedChart containerList={data2} labelAxysY='%CPU Usage' unit='m' unitLabel='%CPU'/>
     </div>
   ));
