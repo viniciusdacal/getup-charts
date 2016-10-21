@@ -12,6 +12,8 @@ import {
 import moment from 'moment';
 import {normalizeContainersData, hexEncode} from '../_utils';
 
+const isNumber = value => typeof value === 'number';
+
 const getAverageByTick = (containerData) => {
   return containerData.data.map(range => {
     const totals = Object.keys(range).reduce((totals, key) => {
@@ -23,7 +25,7 @@ const getAverageByTick = (containerData) => {
 
     return {
       start: range.start,
-      avg : totals.values ? parseFloat((totals.values / totals.lines).toFixed(2)) : null,
+      avg : isNumber(totals.values) ? parseFloat((totals.values / totals.lines).toFixed(2)) : null,
     };
   });
 };
