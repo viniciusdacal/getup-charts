@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $# -ne 1 ] || [ "$1" == '-h' - "$1" == '--help' ]; then
+if [ $# -ne 1 ] || [ "${1}" == '-h' -o "${1}" == '--help' ]; then
     echo Usage $0 '[version_update_type]'
     exit 1
 fi
