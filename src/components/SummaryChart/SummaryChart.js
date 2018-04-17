@@ -30,7 +30,7 @@ const getAverageByTick = (containerData) => {
   });
 };
 
-const getLastAverage = (averageByTick) => averageByTick[averageByTick.length - 1].avg || 0;
+const getLastAverage = (averageByTick) => averageByTick.length > 0 ? (averageByTick[averageByTick.length - 1].avg || 0) : 0;
 const SummaryChart = ({
   containerList,
   labelAxysY,
